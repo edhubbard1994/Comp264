@@ -200,7 +200,7 @@ int bitXor(int x, int y) {
 int tmax(void) {
   int a = 0;
   int b = ~a;
-  b >> 1;
+  b = b >> 1;
   return (~b);
 }
 /* 
