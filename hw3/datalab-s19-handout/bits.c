@@ -198,10 +198,10 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmax(void) {
-  int a = 0;
-  int b = ~a;
-  b = b >> 1;
-  return (~b);
+  int x = 1;
+  x = x << 31;
+  x = ~x;
+  return x;
 }
 /* 
  * isNotEqual - return 0 if x == y, and 1 otherwise 
