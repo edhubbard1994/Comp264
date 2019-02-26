@@ -189,7 +189,7 @@ int bitXor(int x, int y) {
   int a = (~x)&y;
   int b = x&(~y);
   int c = (~a)&(~b);
-  return c;
+  return (~c);
 }
 /* 
  * TMax - return maximum two's complement integer 
@@ -201,7 +201,7 @@ int tmax(void) {
   int a = 0;
   int b = ~a;
   b >> 1;
-  return b;
+  return (~b);
 }
 /* 
  * isNotEqual - return 0 if x == y, and 1 otherwise 
@@ -223,8 +223,8 @@ int isNotEqual(int x, int y) {
  *   Rating: 2
  */
 int copyLSB(int x) {
-  x << 31;
-  x >> 31;
+  x = x << 31;
+  x = x >> 31;
   return x;
 }
 /* 
