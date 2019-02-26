@@ -3,6 +3,10 @@
  * 
  * <Please put your name and userid here>
  * 
+ * Edward Hubbard - Alberto Cattaneo
+ * ehubbard2
+ * 
+ * 
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
  *
@@ -170,8 +174,9 @@ NOTES:
  *   Max ops: 8
  *   Rating: 1
  */
+
 int bitNor(int x, int y) {
-  return 2;
+  return  (~x & ~y);
 }
 /* 
  * bitXor - x^y using only ~ and & 
@@ -181,7 +186,10 @@ int bitNor(int x, int y) {
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 2;
+  int a = (~x)&y;
+  int b = x&(~y);
+  int c = (~a)&(~b);
+  return c;
 }
 /* 
  * TMax - return maximum two's complement integer 
@@ -190,7 +198,10 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmax(void) {
-  return 2;
+  int a = 0;
+  int b = ~a;
+  b >> 1;
+  return b;
 }
 /* 
  * isNotEqual - return 0 if x == y, and 1 otherwise 
@@ -200,7 +211,9 @@ int tmax(void) {
  *   Rating: 2
  */
 int isNotEqual(int x, int y) {
-  return 2;
+  int a = !(x^y);
+  return !a;
+
 }
 /* 
  * copyLSB - set all bits of result to least significant bit of x
@@ -210,7 +223,9 @@ int isNotEqual(int x, int y) {
  *   Rating: 2
  */
 int copyLSB(int x) {
-  return 2;
+  x << 31;
+  x >> 31;
+  return x;
 }
 /* 
  * logicalShift - shift x to the right by n, using a logical shift
@@ -221,7 +236,8 @@ int copyLSB(int x) {
  *   Rating: 3 
  */
 int logicalShift(int x, int n) {
-  return 2;
+  int a =  (x>>n)&~(((0x1<<31)>>n)<<1);
+  return a;
 }
 /* 
  * isNonNegative - return 1 if x >= 0, return 0 otherwise 
@@ -231,5 +247,13 @@ int logicalShift(int x, int n) {
  *   Rating: 3
  */
 int isNonNegative(int x) {
-  return 2;
+  int a = x>>31;
+  a =!a;
+  return a;
 }
+
+/*int main(){
+
+  printf("the bit is: %d",bitNor(0,1));
+  return 0; 
+}*/
