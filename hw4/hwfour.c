@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 long decode2(long x, long y, long z){
-    y -= x;
+     x -= y;
     z *= y;
     long temp = z;
     temp = temp << 15;
